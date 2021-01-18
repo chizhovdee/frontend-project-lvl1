@@ -9,3 +9,6 @@ brain-games:
 
 reshim:
 		asdf reshim nodejs
+
+lint:
+	npx eslint .
