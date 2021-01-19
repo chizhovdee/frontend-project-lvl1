@@ -17,3 +17,9 @@ export function getUserName() {
 export function greetUser() {
   console.log(`Hello, ${getUserName()}`);
 }
+
+export function startSession() {
+  welcome();
+  askAndSaveUserName();
+  greetUser();
+}
