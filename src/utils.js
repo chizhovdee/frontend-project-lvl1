@@ -3,5 +3,5 @@ export function random(start, end) {
 }
 
 export function sample(arr) {
-  return arr[0]; // TODO
+  return arr[random(0, arr.length - 1)];
 }
