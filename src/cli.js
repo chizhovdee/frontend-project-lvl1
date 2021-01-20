@@ -1,2 +1,2 @@
-export * from './session.js';
-export * from './even-game.js';
+export { startSession } from './session.js';
+export { startEvenGame } from './even-game.js';
