@@ -2,12 +2,7 @@ import readlineSync from 'readline-sync';
 import games from './games/index.js';
 import { startSession, getUserName } from './session.js';
 import { RIGHT_ANSWERS_COUNT } from './settings.js';
-import {
-  GAMES,
-  GAME_STATUS,
-  ANSWER_STATUS,
-  RULES
-} from './constants.js';
+import { GAMES, GAME_STATUS, ANSWER_STATUS } from './constants.js';
 
 let gameType;
 let score;
@@ -15,7 +10,15 @@ let gameStatus;
 let answerStatus;
 
 function printRules() {
-  console.log(RULES[gameType]);
+  switch (gameType) {
+    case GAMES.even:
+      console.log(games.even.getRule());
+      break;
+    case GAMES.calc:
+      console.log(games.calc.getRule());
+      break;
+    default:
+  }
 }
 
 function setGameType(value) {
@@ -41,12 +44,12 @@ function initialize(game) {
   setAnswerStatus(ANSWER_STATUS.waiting);
 }
 
-function getQuestion() {
+function generateQuestion() {
   switch (gameType) {
     case GAMES.even:
-      return games.even.getQuestion();
+      return games.even.generateQuestion();
     case GAMES.calc:
-      return games.calc.getQuestion();
+      return games.calc.generateQuestion();
     default:
       return null;
   }
@@ -63,8 +66,19 @@ function getRightAnswerBy(question) {
   }
 }
 
+function getQuestionMessage(question) {
+  switch (gameType) {
+    case GAMES.even:
+      return games.even.getQuestionMessage(question);
+    case GAMES.calc:
+      return games.calc.getQuestionMessage(question);
+    default:
+      return null;
+  }
+}
+
 function processAnswers(userAnswer, rightAnswer) {
-  if (userAnswer !== rightAnswer) {
+  if (userAnswer.toString() !== rightAnswer.toString()) {
     setGameStatus(GAME_STATUS.lost);
     setAnswerStatus(ANSWER_STATUS.wrong);
     return;
@@ -100,8 +114,8 @@ function play() {
   setGameStatus(GAME_STATUS.played);
 
   while (gameStatus === GAME_STATUS.played) {
-    const question = getQuestion();
-    const userAnswer = readlineSync.question(`Question: ${question} `);
+    const question = generateQuestion();
+    const userAnswer = readlineSync.question(`Question: ${getQuestionMessage(question)} `);
     const rightAnswer = getRightAnswerBy(question);
     processAnswers(userAnswer, rightAnswer);
     printStatusMessage(userAnswer, rightAnswer);
