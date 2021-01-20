@@ -9,3 +9,6 @@
 
 ### Github
 ![Node.js CI](https://github.com/chizhovdee/frontend-project-lvl1/workflows/Node.js%20CI/badge.svg)
+
+### Demo
+[Brain-even game](https://asciinema.org/a/oYRQ0dKAdYvQD49iXY8bJuBJF)
