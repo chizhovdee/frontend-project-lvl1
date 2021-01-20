@@ -1,2 +1,7 @@
-export { startSession } from './session.js';
-export { startEvenGame } from './even-game.js';
+import { runGame, GAMES } from './index.js';
+
+export default {
+  runEvenGame: () => runGame(GAMES.even),
+  runCalcGame: () => runGame(GAMES.calc),
+  runGreeting: () => runGame()
+};

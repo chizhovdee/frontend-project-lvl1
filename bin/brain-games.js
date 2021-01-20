@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import * as cli from '../src/cli.js';
+import cli from '../src/cli.js';
 
-cli.startSession();
+cli.runGreeting();
