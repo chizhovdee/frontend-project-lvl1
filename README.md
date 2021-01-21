@@ -12,3 +12,5 @@
 
 ### Demo
 [Brain-even game](https://asciinema.org/a/oYRQ0dKAdYvQD49iXY8bJuBJF)
+
+[Brain-calc game](https://asciinema.org/a/1AGSXVkXv552tUHKrwKjLrPH6)
