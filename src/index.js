@@ -1,8 +1,13 @@
 import readlineSync from 'readline-sync';
-import games from './games/index.js';
+import { playRound } from './games/index.js';
 import { startSession, getUserName } from './session.js';
 import { RIGHT_ANSWERS_COUNT } from './settings.js';
-import { GAMES, GAME_STATUS, ANSWER_STATUS } from './constants.js';
+import {
+  GAMES,
+  GAME_STATUS,
+  ANSWER_STATUS,
+  RULES
+} from './constants.js';
 
 let gameType;
 let score;
@@ -10,15 +15,7 @@ let gameStatus;
 let answerStatus;
 
 function printRules() {
-  switch (gameType) {
-    case GAMES.even:
-      console.log(games.even.getRule());
-      break;
-    case GAMES.calc:
-      console.log(games.calc.getRule());
-      break;
-    default:
-  }
+  console.log(RULES[gameType]);
 }
 
 function setGameType(value) {
@@ -42,39 +39,6 @@ function initialize(game) {
   setScore(0);
   setGameStatus(GAME_STATUS.played);
   setAnswerStatus(ANSWER_STATUS.waiting);
-}
-
-function generateQuestion() {
-  switch (gameType) {
-    case GAMES.even:
-      return games.even.generateQuestion();
-    case GAMES.calc:
-      return games.calc.generateQuestion();
-    default:
-      return null;
-  }
-}
-
-function getRightAnswerBy(question) {
-  switch (gameType) {
-    case GAMES.even:
-      return games.even.getRightAnswerBy(question);
-    case GAMES.calc:
-      return games.calc.getRightAnswerBy(question);
-    default:
-      return null;
-  }
-}
-
-function getQuestionMessage(question) {
-  switch (gameType) {
-    case GAMES.even:
-      return games.even.getQuestionMessage(question);
-    case GAMES.calc:
-      return games.calc.getQuestionMessage(question);
-    default:
-      return null;
-  }
 }
 
 function processAnswers(userAnswer, rightAnswer) {
@@ -114,9 +78,7 @@ function play() {
   setGameStatus(GAME_STATUS.played);
 
   while (gameStatus === GAME_STATUS.played) {
-    const question = generateQuestion();
-    const userAnswer = readlineSync.question(`Question: ${getQuestionMessage(question)} `);
-    const rightAnswer = getRightAnswerBy(question);
+    const [userAnswer, rightAnswer] = playRound(gameType);
     processAnswers(userAnswer, rightAnswer);
     printStatusMessage(userAnswer, rightAnswer);
     setAnswerStatus(ANSWER_STATUS.waiting);

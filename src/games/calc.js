@@ -3,10 +3,6 @@ import { MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER } from '../settings.js';
 
 const OPERATIONS = ['+', '-', '*'];
 
-export function getRule() {
-  return 'What is the result of the expression?';
-}
-
 export function generateQuestion() {
   return [
     random(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER), // first operand
