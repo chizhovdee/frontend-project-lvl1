@@ -1,4 +1,5 @@
-import { playRound } from './games/index.js';
+import readlineSync from 'readline-sync';
+import games from './games/index.js';
 import { startSession, getUserName } from './session.js';
 import { RIGHT_ANSWERS_COUNT } from './settings.js';
 import {
@@ -12,6 +13,23 @@ let gameType;
 let score;
 let gameStatus;
 let answerStatus;
+
+function getGame() {
+  switch (gameType) {
+    case GAMES.even: return games.even;
+    case GAMES.calc: return games.calc;
+    default: return null;
+  }
+}
+
+export function playRound() {
+  const game = getGame();
+  const question = game.generateQuestion();
+  const userAnswer = readlineSync.question(`Question: ${game.getQuestionMessage(question)} `);
+  const rightAnswer = game.getRightAnswerBy(question);
+
+  return [userAnswer, rightAnswer];
+}
 
 function printRules() {
   console.log(RULES[gameType]);
