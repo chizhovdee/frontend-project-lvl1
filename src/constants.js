@@ -19,5 +19,6 @@ export const ANSWER_STATUS = {
 
 export const RULES = {
   [GAMES.even]: 'Answer "yes" if the number is even, otherwise answer "no".',
-  [GAMES.calc]: 'What is the result of the expression?'
+  [GAMES.calc]: 'What is the result of the expression?',
+  [GAMES.gcd]: 'Find the greatest common divisor of given numbers.'
 };
