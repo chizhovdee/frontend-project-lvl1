@@ -1,6 +1,7 @@
 export const GAMES = {
   even: 'even',
-  calc: 'calc'
+  calc: 'calc',
+  gcd: 'gcd'
 };
 
 export const GAME_STATUS = {

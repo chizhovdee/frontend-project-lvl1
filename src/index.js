@@ -14,25 +14,12 @@ let score;
 let gameStatus;
 let answerStatus;
 
-function getGame() {
-  switch (gameType) {
-    case GAMES.even: return games.even;
-    case GAMES.calc: return games.calc;
-    default: return null;
-  }
-}
-
-export function playRound() {
-  const game = getGame();
-  const question = game.generateQuestion();
-  const userAnswer = readlineSync.question(`Question: ${game.getQuestionMessage(question)} `);
-  const rightAnswer = game.getRightAnswerBy(question);
-
-  return [userAnswer, rightAnswer];
-}
-
 function printRules() {
   console.log(RULES[gameType]);
+}
+
+function printUserAnswer(userAnswer) {
+  console.log(`Your answer: ${userAnswer}`);
 }
 
 function setGameType(value) {
@@ -91,11 +78,30 @@ function printStatusMessage(userAnswer, rightAnswer) {
   }
 }
 
+function getGame() {
+  switch (gameType) {
+    case GAMES.even: return games.even;
+    case GAMES.calc: return games.calc;
+    case GAMES.gcd: return games.gcd;
+    default: return null;
+  }
+}
+
+export function playRound() {
+  const game = getGame();
+  const question = game.generateQuestion();
+  const userAnswer = readlineSync.question(`Question: ${game.getQuestionMessage(question)} `);
+  const rightAnswer = game.getRightAnswerBy(question);
+
+  return [userAnswer, rightAnswer];
+}
+
 function play() {
   setGameStatus(GAME_STATUS.played);
 
   while (gameStatus === GAME_STATUS.played) {
     const [userAnswer, rightAnswer] = playRound(gameType);
+    printUserAnswer(userAnswer);
     processAnswers(userAnswer, rightAnswer);
     printStatusMessage(userAnswer, rightAnswer);
     setAnswerStatus(ANSWER_STATUS.waiting);
