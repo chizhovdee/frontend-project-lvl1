@@ -11,6 +11,8 @@
 ![Node.js CI](https://github.com/chizhovdee/frontend-project-lvl1/workflows/Node.js%20CI/badge.svg)
 
 ### Demo
-[Brain-even game](https://asciinema.org/a/oYRQ0dKAdYvQD49iXY8bJuBJF)
+[Brain Even Game](https://asciinema.org/a/oYRQ0dKAdYvQD49iXY8bJuBJF)
 
-[Brain-calc game](https://asciinema.org/a/1AGSXVkXv552tUHKrwKjLrPH6)
+[Brain Calc Game](https://asciinema.org/a/1AGSXVkXv552tUHKrwKjLrPH6)
+
+[Brain Gcd Game](https://asciinema.org/a/xrVk9MhoSDoBzmnyUTnifRVvH)
