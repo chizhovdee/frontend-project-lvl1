@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import { playRound } from './games/index.js';
 import { startSession, getUserName } from './session.js';
 import { RIGHT_ANSWERS_COUNT } from './settings.js';

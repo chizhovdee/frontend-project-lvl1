@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/code",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "[![Actions Status](https://github.com/chizhovdee/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/chizhovdee/frontend-project-lvl1/actions)",
   "type": "module",
   "bin": {
