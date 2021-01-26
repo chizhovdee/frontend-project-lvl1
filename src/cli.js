@@ -1,8 +1,9 @@
 import { runGame, GAMES } from './index.js';
 
 export default {
+  runGreeting: () => runGame(),
   runEvenGame: () => runGame(GAMES.even),
   runCalcGame: () => runGame(GAMES.calc),
   runGcdGame: () => runGame(GAMES.gcd),
-  runGreeting: () => runGame()
+  runProgressionGame: () => runGame(GAMES.progression)
 };

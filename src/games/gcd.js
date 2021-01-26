@@ -1,5 +1,7 @@
 import { random, gcd } from '../utils.js';
-import { MAX_RANDOM_NUMBER, MIN_RANDOM_NUMBER } from '../settings.js';
+
+const MIN_RANDOM_NUMBER = 1;
+const MAX_RANDOM_NUMBER = 100;
 
 export function generateQuestion() {
   return [
