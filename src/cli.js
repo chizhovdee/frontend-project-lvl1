@@ -5,5 +5,6 @@ export default {
   runEvenGame: () => runGame(GAMES.even),
   runCalcGame: () => runGame(GAMES.calc),
   runGcdGame: () => runGame(GAMES.gcd),
-  runProgressionGame: () => runGame(GAMES.progression)
+  runProgressionGame: () => runGame(GAMES.progression),
+  runPrimeGame: () => runGame(GAMES.prime)
 };

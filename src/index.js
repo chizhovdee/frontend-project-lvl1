@@ -84,6 +84,7 @@ function getGame() {
     case GAMES.calc: return games.calc;
     case GAMES.gcd: return games.gcd;
     case GAMES.progression: return games.progression;
+    case GAMES.prime: return games.prime;
     default: return null;
   }
 }
