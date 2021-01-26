@@ -83,6 +83,7 @@ function getGame() {
     case GAMES.even: return games.even;
     case GAMES.calc: return games.calc;
     case GAMES.gcd: return games.gcd;
+    case GAMES.progression: return games.progression;
     default: return null;
   }
 }
