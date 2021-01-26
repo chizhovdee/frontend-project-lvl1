@@ -11,7 +11,7 @@ export function generateQuestion() {
 }
 
 export function getRightAnswerBy(numbers) {
-  return gcd(...numbers);
+  return gcd(numbers);
 }
 
 export function getQuestionMessage(numbers) {

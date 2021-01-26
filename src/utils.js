@@ -8,7 +8,7 @@ export function sample(arr) {
 
 const isMaxGcd = (numbers, value) => !numbers.some((n) => (n % value) !== 0);
 
-export function gcd(...numbers) {
+export function gcd(numbers) {
   let maxGcd = numbers.sort((a, b) => a - b)[0];
 
   while (maxGcd > 1) {
