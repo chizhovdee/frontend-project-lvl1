@@ -10,6 +10,9 @@ brain-games:
 brain-even:
 		node bin/brain-even.js
 
+brain-gcd:
+		node bin/brain-gcd.js
+
 brain-calc:
 		node bin/brain-calc.js
 

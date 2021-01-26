@@ -15,7 +15,6 @@
         "import/extensions": "off",
         "no-await-in-loop": "off",
         "import/prefer-default-export": "off",
-        "import/named": "off",
-        "no-loop-func": "off"
+        "import/named": "off"
     }
 }
