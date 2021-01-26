@@ -6,7 +6,7 @@ import {
   GAMES,
   GAME_STATUS,
   ANSWER_STATUS,
-  RULES
+  RULES,
 } from './constants.js';
 
 let gameType;
@@ -121,5 +121,5 @@ const runGame = (game) => {
 
 export {
   runGame,
-  GAMES
+  GAMES,
 };

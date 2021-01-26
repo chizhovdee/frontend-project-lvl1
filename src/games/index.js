@@ -9,5 +9,5 @@ export default {
   calc,
   gcd,
   progression,
-  prime
+  prime,
 };
