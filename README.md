@@ -18,3 +18,5 @@
 [Brain Gcd Game](https://asciinema.org/a/xrVk9MhoSDoBzmnyUTnifRVvH)
 
 [Brain Progression Game](https://asciinema.org/a/YctE23yqFcUb0tnorLRlbv9cz)
+
+[Brain Prime Game](https://asciinema.org/a/s0E0fjZtRa9CAoMMcLIUHHqj7)
