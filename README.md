@@ -16,3 +16,5 @@
 [Brain Calc Game](https://asciinema.org/a/1AGSXVkXv552tUHKrwKjLrPH6)
 
 [Brain Gcd Game](https://asciinema.org/a/xrVk9MhoSDoBzmnyUTnifRVvH)
+
+[Brain Progression Game](https://asciinema.org/a/YctE23yqFcUb0tnorLRlbv9cz)
